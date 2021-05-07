@@ -14,10 +14,10 @@ fetch(url,{
         welcome.innerHTML = `Error de autenticación`;
         window.location.replace("./login.html");
     }else{
-        if(response_login.admin === true){
-            window.location.replace("./welcomeadmin.html");
+        if(response_login.admin === false){
+            window.location.replace("./login.html");
         }else{
-            welcome.innerHTML = `Welcome ${response_login.name}`;
+            welcome.innerHTML = `Welcome administrador ${response_login.name}`;
         }
     }
 }).catch(error => console.log('Request failed:', error));

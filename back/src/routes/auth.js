@@ -17,8 +17,8 @@ const apiLimiter = rateLimit({
 });
 
 let usuarios = [
-    { id: 1, name: "sara", lastname: "gomez", email: "saragomez@gmail.com", age: 15, password: "542"},
-    { id: 2, name: "pepito", lastname: "perez", email: "pepitoperez@gmail.com", age: 19, password: "888"},
+    { id: 1, admin: true, name: "sara", lastname: "gomez", email: "saragomez@gmail.com", age: 15, password: "542"},
+    { id: 2, admin: false, name: "pepito", lastname: "perez", email: "pepitoperez@gmail.com", age: 19, password: "888"},
 ];
 router.post('/login',apiLimiter, validarDatosLogin, (req, res) => {
     const {username, password} = req.body;
@@ -34,6 +34,7 @@ router.post('/login',apiLimiter, validarDatosLogin, (req, res) => {
         }else{
             let usuario = {
                 id: usuariosFiltrados[0].id,
+                admin: usuariosFiltrados[0].admin,
                 name: usuariosFiltrados[0].name,
                 lastname: usuariosFiltrados[0].lastname,
                 email: usuariosFiltrados[0].email,
@@ -47,10 +48,16 @@ router.post('/login',apiLimiter, validarDatosLogin, (req, res) => {
 
 router.post('/register', validarDatosRegister, validarEmail, validarClave, (req, res) => {
 
-    const {name, lastname, email, age, password} = req.body;
+    let {admin, name, lastname, email, age, password} = req.body;
     const lastId = usuarios[usuarios.length -1].id;
+    if (admin === "si"){
+        admin = true;
+    }else{
+        admin = false;
+    }
     const usuario = {
         id: lastId + 1 ,
+        admin,
         name,
         lastname,
         email,

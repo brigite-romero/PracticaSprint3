@@ -1,3 +1,4 @@
+const admin = document.getElementById('admin');
 const username = document.getElementById('name');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
@@ -9,6 +10,7 @@ const url = 'http://localhost:5000/auth/register';
 
 function registrar(){
     let usuario = {
+            admin: admin.value,
             name: username.value,
             lastname: lastName.value,
             email: email.value,
