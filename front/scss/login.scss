@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #F5F4F9;
+}
+.return{
+    margin: 15px;
+    cursor: pointer;
+    .fas{
+        font-size: 20px;
+        color: #555555;
+    }
+}
+.banner{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .img{
+        width: 50%;
+    }
+    .title{
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #555555;
+        text-align: center;
+        line-height: 33px;
+        margin: 0;
+    }
+}
+.form{
+    background: white;
+    width: 90%;
+    margin: 25px auto;
+    border-radius: 15px;
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        padding: 15px 15px 0 15px;
+        box-shadow: 1px 2px 11px -9px grey;
+        border-radius: 20px;
+        .title{
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #838080;
+            line-height: 33px;
+            margin: 0;
+        }
+        .inp{
+            border: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #9c9c9c;
+            line-height: 33px;
+            margin: 0;
+            outline: none;
+            border-radius: 20px;
+        }
+    }
+    .forgot-password, .link{
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        color: #c4c4c4;
+        line-height: 33px;
+        cursor: pointer;
+        text-align: right;
+    }
+    .forgot-password{
+        padding: 15px;
+    }
+    .registrer{
+        padding: 0 15px 15px 0;
+        text-align: right;
+        .link{
+           text-decoration: none;
+        }
+    }
+}
+.button{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    .cerrar{
+        background: #EE929D;
+        width: 250px;
+        height: 50px;
+        border: 1px solid #EE929D;
+        border-radius: 30px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 200;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        outline: none;
+    }
+    .login{
+        background: #EE929D;
+        width: 250px;
+        height: 50px;
+        border: 1px solid #EE929D;
+        border-radius: 30px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 200;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        outline: none;
+    }
+}
